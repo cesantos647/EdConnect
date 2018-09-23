@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Student {
+
+  // Basic student information
+  String firstName;
+  String lastName;
+  int age;
+  int grade;
+  String sex;
+
+  // Student grade and attribute information
+  List<Double> grades = new ArrayList<Double>();
+  List<double[]> gradeAttributes = new ArrayList<double[]>();
+
+  Student(String lName, String fName, int a, int g, String s) {
+    firstName = fName;
+    lastName = lName;
+    age = a;
+    grade = g;
+    sex = s;
+  }
+
+  public void addGrade(double grade, double[] attributeScores) {
+    grades.add(grade);
+    gradeAttributes.add(attributeScores);
+  }
+
+  public void editGrade(int gradeIndex, double grade, double[] attributeScores) {
+    grades.set(gradeIndex, grade);
+    gradeAttributes.get(gradeIndex) = attributeScores;
+  }
+
+  public void deleteGrade(int gradeIndex) {
+    grades.remove(gradeIndex);
+    gradeAttributes.remix(gradeIndex);
+  }
+}
